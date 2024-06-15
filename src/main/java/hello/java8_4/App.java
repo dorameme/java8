@@ -15,6 +15,6 @@ public class App {
             .filter(oc -> oc.getTitle().startsWith("spring")).findFirst();
 
         spring.ifPresent(oc-> System.out.println(oc.getTitle()));
-        OnlineClass book = spring.orElse(new OnlineClass(4, "book", true));
+        spring.orElse(new OnlineClass(4, "book", true));
     }
 }
