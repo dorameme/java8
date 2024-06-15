@@ -3,32 +3,16 @@ package hello.java8_6;
 public class App {
 
     public static void main(String[] args) throws InterruptedException {
-        MyThread myThread=new MyThread();
+        //멀티스레드 1. Thread를 상속받아 override해서 구현!
+        MyThread myThread = new MyThread();
         myThread.start();
-        System.out.println("Hello~");
-
-        Thread thread=new Thread(()->{
-
-                System.out.println(Thread.currentThread().getName());
-                try{
-                    Thread.sleep(1000L);
-                }catch(InterruptedException e){
-                    System.out.println("interrupted!");
-                    return;
-                }
-
-        });
-        thread.start();
-        System.out.println("hello"+Thread.currentThread().getName());
-        Thread.sleep(3000L);
-        thread.join();
-        thread.interrupt();
+        System.out.println("hello?:"+Thread.currentThread().getName());
     }
+    static class MyThread extends  Thread{
 
-    static class MyThread extends Thread{
         @Override
         public void run() {
-            System.out.println("Thread!");
+            System.out.println("thread:"+ Thread.currentThread().getName());
         }
     }
 }
