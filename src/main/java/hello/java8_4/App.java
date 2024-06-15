@@ -6,6 +6,7 @@ import java.util.Optional;
 
 public class App {
     public static void main(String[] args) {
+        OnlineClass on=new OnlineClass(1,"1",false);
         List<OnlineClass> springClasses =new ArrayList<>();
         springClasses.add(new OnlineClass(1,"springboot",true));
         springClasses.add(new OnlineClass(2,"spring",false));
